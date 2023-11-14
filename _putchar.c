@@ -1,19 +1,12 @@
-/**
- * _putchar - wr character c to stdout
- * @c: character
- * Return: On success 1
- */
-int _putchar(int c)
-{
-	static int i;
-	static char buf[OUTPUT_BUF_SIZE];
+#include "main.h"
 
-	if (c == BUF_FLUSH || i >= OUTPUT_BUF_SIZE)
-	{
-		write(1, buf, i);
-		i = 0;
-	}
-	if (c != BUF_FLUSH)
-		buf[i++] = c;
-	return (1);
+/**
+ * _putchar - prints/writes character
+ * @character: The character to print
+ * Return: 1, success, -1 error
+ */
+
+int _putchar(char character)
+{
+	return (write(1, &character, 1));
 }

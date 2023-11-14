@@ -1,6 +1,6 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
 /**
  * _printf - printf function
  * @format: list of arguments
@@ -9,8 +9,8 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int count = 0;
-
+	int count = 0, x, len = 0;
+	char c, *str;
 	va_start(args, format);
 
 	while (*format != '\0')
@@ -25,16 +25,21 @@ int _printf(const char *format, ...)
 			switch (*++format)
 			{
 				case 'd':
-					count += fprintf(stdout, "%d", va_arg(args, int));
+					x = va_arg(args, int);
+					write(1, &x, 1);
+					count++;
 					break;
 				case 'c':
-					count += fprintf(stdout, "%c", va_arg(args, char));
+					c = va_arg(args, char);
+					write(1, &c, 1);
+					count++;
 					break;
 				case 's':
-					count += fprintf(stdout, "%s", va_arg(args, char *));
-					break;
-				case 'f':
-					count += fprintf(stdout, "%f", va_arg(args, double));
+					str = va_arg(args, char *);
+					while (str[len] != '\0')
+						len++;
+					write(1, str, len);
+					count += len;
 					break;
 				default:
 					putchar('%');

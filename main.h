@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <limits.h>
+#include <unistd.h>
 
 typedef struct formats
 {
@@ -18,6 +20,7 @@ int _char(va_list list);
 int _string(va_list list);
 int _integer(va_list list);
 int printf_char(va_list val);
-
+int printf_hex_aux(unsigned long int num);
+int printf_pointer(va_list val);
 
 #endif

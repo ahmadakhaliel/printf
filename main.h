@@ -1,5 +1,4 @@
-#ifndef HEADER_FILE
-#define HEADER_FILE
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -17,5 +16,7 @@ int _percent(va_list list);
 int _char(va_list list);
 int _string(va_list list);
 int _integer(va_list list);
+int printf_char(va_list val);
+
 
 #endif

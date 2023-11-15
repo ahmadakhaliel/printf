@@ -28,9 +28,12 @@ int printf_percentage_character(void);
 int printf_HEX(va_list val);
 int printf_hex(va_list val);
 int printf_ROT13(va_list args);
-
-
-
-
+int printf_octal(va_list val);
+int printf_unsigned_int(va_list args);
+int printf_binary(va_list val);
+int printf_StrRev(va_list args);
+int print_number(int n);
+int printf_int(va_list args);
+int printf_dec(va_list args);
 
 #endif

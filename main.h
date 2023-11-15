@@ -27,6 +27,7 @@ int printf_ex_str(va_list val);
 int printf_percentage_character(void);
 int printf_HEX(va_list val);
 int printf_hex(va_list val);
+int printf_ROT13(va_list args);
 
 
 

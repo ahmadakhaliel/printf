@@ -19,7 +19,7 @@ int printf_binary(va_list val)
 
 	for (n = 31; n >= 0; n--)
 	{
-		int bit = (num >> i) & 1;
+		int bit = (num >> n) & 1;
 		if (bit || count > 0)
 		{
 			_putchar(bit + '0');

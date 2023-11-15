@@ -14,7 +14,6 @@ int printf_hex(va_list val)
     unsigned int num = va_arg(val, unsigned int);
     unsigned int temp = num;
 
-    // Calculate the number of digits required
     while (num / 16 != 0)
     {
         num /= 16;
@@ -25,17 +24,15 @@ int printf_hex(va_list val)
     array = malloc(counter * sizeof(int));
     if (array == NULL)
     {
-        return (-1); // Handle memory allocation failure
+        return (-1);
     }
 
-    // Populate the array with the hexadecimal digits
     for (n = 0; n < counter; n++)
     {
         array[n] = temp % 16;
         temp /= 16;
     }
 
-    // Print the hexadecimal digits
     for (n = counter - 1; n >= 0; n--)
     {
         if (array[n] > 9)
@@ -43,7 +40,6 @@ int printf_hex(va_list val)
         _putchar(array[n] + '0');
     }
 
-    // Free the allocated memory
     free(array);
 
     return (counter);

@@ -6,37 +6,46 @@
  * Return: counter
  */
 
-	int printf_ROT13(va_list args)
+int printf_ROT13(va_list args)
 {
     int counter = 0;
-    char *c = va_arg(args, char*);
+    char *inputString = va_arg(args, char*);
 
-    if (c == NULL)
-        c = "(null)";
+    if (inputString == NULL)
+        inputString = "(null)";
 
-    // alpha and beta declaration
-	
-	char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char beta[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-    for (int i = 0; c[i]; i++)
+    char alpha[] = {"abcdefghijklmnopqrstuvwxyz"};
+    char beta[] = {"nopqrstuvwxyzabcdefghijklm"};
+
+    char ALPHA[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+    char BETA[] = {"NOPQRSTUVWXYZABCDEFGHIJKLM"};
+
+    int i = 0;
+
+    while (inputString[i])
     {
-        int k = 0;
-        for (int j = 0; alpha[j] && !k; j++)
+        int found = 0;
+        int j = 0;
+
+        while (alpha[j] && !found)
         {
-            if (c[i] == alpha[j])
+            if (inputString[i] == alpha[j])
             {
                 _putchar(beta[j]);
                 counter++;
-                k = 1;
+                found = 1;
             }
+            j++;
         }
-        if (!k)
+
+        if (!found)
         {
-            _putchar(c[i]);
+            _putchar(inputString[i]);
             counter++;
         }
-    }
 
+        i++;
+    }
     return (counter);
 }

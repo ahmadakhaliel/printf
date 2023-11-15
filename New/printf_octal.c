@@ -4,7 +4,7 @@
  * printf_octal - prints octal of unsign integer.
  * @val: arguments.
  * Return: counter.
- */
+*/
 
 int printf_octal(va_list val)
 {
@@ -24,7 +24,6 @@ int printf_octal(va_list val)
     array = malloc(counter * sizeof(int));
     if (array == NULL)
     {
-        // Handle memory allocation failure
         return (-1);
     }
 
@@ -39,7 +38,6 @@ int printf_octal(va_list val)
         _putchar(array[i] + '0');
     }
 
-    // Free the allocated memory
     free(array);
 
     return (counter);

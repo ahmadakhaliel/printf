@@ -4,14 +4,13 @@
  * printf_HEX - prints hexadecimal of an unsigned integer.
  * @val: arguments.
  * Return: counter.
- */
+*/
 
 int printf_HEX(va_list val)
 {
     unsigned int num = va_arg(val, unsigned int);
     int counter = 0;
 
-    // Calculate the number of digits required
     while (num / 16 != 0)
     {
         num /= 16;

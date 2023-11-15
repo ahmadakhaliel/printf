@@ -17,7 +17,6 @@ int printf_StrRev(va_list args)
     while (s[count] != '\0')
         count++;
 
-    // Print the string in Reverse
     for (i = count - 1; i >= 0; i--)
         _putchar(s[i]);
 

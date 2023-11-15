@@ -53,7 +53,7 @@ int printf_ex_str(va_list val)
                 _putchar('0');
                 m++;
             }
-            len += printf_HEX_aux(cast);
+             m += printf_HEX_aux(cast);
         }
         else
         {

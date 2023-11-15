@@ -18,8 +18,9 @@ int print_ROT13(va_list ap, params_t *params)
     int count = 0;
     char rot13Mapping[] =
         "NOPQRSTUVWXYZABCDEFGHIJKLM      nopqrstuvwxyzabcdefghijklm";
-
-    for (int i = 0; inputString[i] != '\0'; i++)
+	
+    int i = 0;
+    while (inputString[i] != '\0')
     {
         if ((inputString[i] >= 'A' && inputString[i] <= 'Z') ||
             (inputString[i] >= 'a' && inputString[i] <= 'z'))

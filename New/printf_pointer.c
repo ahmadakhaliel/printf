@@ -9,10 +9,11 @@
 int printf_hex_aux_recursive(unsigned long int num)
 {
     int remainder;
+    int count;
 
     if (num / 16 != 0) 
     {
-        int count = printf_hex_aux_recursive(num / 16);
+        count = printf_hex_aux_recursive(num / 16);
         remainder = num % 16;
         char hexDigit = (remainder < 10) ? remainder + '0' : remainder - 10 + 'A';
         _putchar(hexDigit);
@@ -45,11 +46,13 @@ int printf_pointer(va_list val)
     z = va_arg(val, void*);
     if (z == NULL)
     {
-        for (int i = 0; s[i] != '\0'; i++)
+	    while (*s)
         {
-            _putchar(s[i]);
+            _putchar(*s);
             count++;
+            s++;
         }
+        
         return (count);
     }
 

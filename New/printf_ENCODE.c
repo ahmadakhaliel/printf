@@ -1,51 +1,41 @@
 #include "main.h"
 
 /**
- * printf_ROT13 - printf str to ROT13 place into buffer
- * @args: type struct va_arg where is allocated printf arguments
+ * printf_ROT13 - printf str to ROT13
+ * @args: type struct va_arg 
+ * @params: the parameters struct
  * Return: counter
- */
+*/
 
-int printf_ROT13(va_list args)
+int print_ROT13(va_list ap, params_t *params)
 {
-    int counter = 0;
-    char *inputString = va_arg(args, char*);
+    char *inputString = va_arg(ap, char *);
+    (void)params;
 
     if (inputString == NULL)
-        inputString = "(null)";
+        return (0);
 
+    int count = 0;
+    char rot13Mapping[] =
+        "NOPQRSTUVWXYZABCDEFGHIJKLM      nopqrstuvwxyzabcdefghijklm";
 
-    char alpha[] = {"abcdefghijklmnopqrstuvwxyz"};
-    char beta[] = {"nopqrstuvwxyzabcdefghijklm"};
-
-    char ALPHA[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-    char BETA[] = {"NOPQRSTUVWXYZABCDEFGHIJKLM"};
-
-    int i = 0;
-
-    while (inputString[i])
+    for (int i = 0; inputString[i] != '\0'; i++)
     {
-        int found = 0;
-        int j = 0;
-
-        while (alpha[j] && !found)
+        if ((inputString[i] >= 'A' && inputString[i] <= 'Z') ||
+            (inputString[i] >= 'a' && inputString[i] <= 'z'))
         {
-            if (inputString[i] == alpha[j])
+            int index = inputString[i] - 'A';
+            if (inputString[i] >= 'a' && inputString[i] <= 'z')
             {
-                _putchar(beta[j]);
-                counter++;
-                found = 1;
+                index = inputString[i] - 'a' + 26;
             }
-            j++;
+            count += _putchar(rot13Mapping[index]);
         }
-
-        if (!found)
+        else
         {
-            _putchar(inputString[i]);
-            counter++;
+            count += _putchar(inputString[i]);
         }
-
-        i++;
     }
-    return (counter);
+
+    return (count);
 }

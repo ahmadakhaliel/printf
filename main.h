@@ -25,5 +25,6 @@ int printf_pointer(va_list val);
 int printf_HEX_aux(int num);
 int printf_ex_str(va_list val);
 int printf_percentage_character(void);
+int printf_HEX(va_list val);
 
 #endif

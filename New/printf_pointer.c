@@ -5,18 +5,28 @@
  * @num: the number to be printed.
  * Return : integer.
 */
+
 int printf_hex_aux_recursive(unsigned long int num)
 {
-    int count = 0;
+    int remainder;
 
-    if (num / 16 != 0)
-        count += printf_hex_aux_recursive(num / 16);
-
-    int remainder = num % 16;
-    char hexDigit = (remainder < 10) ? remainder + '0' : remainder - 10 + 'A';
-    _putchar(hexDigit);
-
-    return (count + 1); 
+    if (num / 16 != 0) 
+    {
+        int count = printf_hex_aux_recursive(num / 16);
+        remainder = num % 16;
+        char hexDigit = (remainder < 10) ? remainder + '0' : remainder - 10 + 'A';
+        _putchar(hexDigit);
+        return (count + 1);
+    }
+   
+    else
+    
+    {
+        remainder = num % 16;
+        char hexDigit = (remainder < 10) ? remainder + '0' : remainder - 10 + 'A';
+        _putchar(hexDigit);
+        return (1);
+    }
 }
 
 /**

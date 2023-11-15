@@ -46,5 +46,9 @@ int printf_StrRev(va_list args);
 int print_number(int n);
 int printf_int(va_list args);
 int printf_dec(va_list args);
+int _strlen(char *s);
+int _strlenchar(const char *s);
+int printf_unsigned(va_list args);
+int printf_string(va_list val);
 
 #endif

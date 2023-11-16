@@ -61,4 +61,5 @@ int useFun(const char *format, va_list args)
 		}
 	}
 	return (count);
+	
 }

@@ -6,8 +6,8 @@
 
 typedef struct formats
 {
-    char *sym;
-    int (*f)(va_list);
+	char *sym;
+	int (*f)(va_list);
 } fmtsSpecifier;
 
 int _putchar(char c);

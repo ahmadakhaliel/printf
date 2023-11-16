@@ -18,7 +18,6 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
 int useFun(const char *format, va_list args)
 {
 	int i, j, count, checker;
@@ -61,5 +60,4 @@ int useFun(const char *format, va_list args)
 		}
 	}
 	return (count);
-	
 }

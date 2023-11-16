@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * printS - a function that prints a string similar to 'puts'.
- * @str: string to be acted upon.
- * Return: Always void.
+ * printS - Print a string
+ * @list: arguments
+ * Return: how many characters has been printed
  */
 int printS(va_list args)
 {

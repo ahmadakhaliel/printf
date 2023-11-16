@@ -1,30 +1,34 @@
 #include "main.h"
 /**
- * print_int - prints an integer a decimal number.
- * @n: int or dec to be printed
- * Return: the digit count of that int.
+ * print_int - prints integer
+ * @list: va_list variable
+ * Return: prints given number of integers
  */
 int print_int(va_list args)
 {
-	char buffer[20];
-	int i = 0, x;
+	long int num1 = va_arg(args, int), num2;
+	int div = 1, i = 0;
 
-	int n = va_arg(args, int);
-
-	if (n < 0)
+	if (num1 < 0)
 	{
 		_putchar('-');
-		n *= -1;
+		i++;
+		num1 *= -1;
 	}
-
-	while (n > 0)
+	num2 = num1;
+	while (num2 > 9)
 	{
-		buffer[i++] = n % 10 + '0';
-		n /= 10;
+		div *= 10;
+		num2 = num2 / 10;
 	}
-	x = i;
-	while (i > 0)
-		_putchar(buffer[--i]);
-
-	return (x);
+	while (div >= 1)
+	{
+		num2 = num1 % div;
+		num1 /= div;
+		_putchar(num1 + '0');
+		num1 = num2;
+		div /= 10;
+		i++;
+	}
+	return (i);
 }

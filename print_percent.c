@@ -1,7 +1,8 @@
 #include "main.h"
 /**
- * print_percent - prints '%'.
- * Return: Always 1.
+ * print_percent - print %
+ * @list: arguments
+ * Return: specific character
  */
 int print_percent(__attribute__((unused))va_list list)
 {

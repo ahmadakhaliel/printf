@@ -18,6 +18,12 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
+/**
+ * useFun - paremters printf
+ * @format: list of arguments
+ * @args: listing
+ * Return: value of print
+ */
 int useFun(const char *format, va_list args)
 {
 	int i, j, count, checker;

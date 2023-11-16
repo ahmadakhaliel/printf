@@ -10,9 +10,6 @@ int printS(va_list args)
 	
     char *str = va_arg(args, char*);
 	
-    if (str == NULL)
-        str = "(null)";
-	
 	for (i = 0; str[i] != 0; i++)
 		_putchar(str[i]);
 	

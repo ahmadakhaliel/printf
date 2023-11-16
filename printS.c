@@ -7,11 +7,11 @@
 int printS(va_list args)
 {
 	int i;
-	
-    char *str = va_arg(args, char*);
-	
+
+	char *str = va_arg(args, char*);
+
 	for (i = 0; str[i] != 0; i++)
 		_putchar(str[i]);
-	
-    return (i);
+
+	return (i);
 }

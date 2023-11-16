@@ -23,11 +23,9 @@ int useFun(const char *format, va_list args)
 {
 	int i, j, count, checker;
 
-	fmtsSpecifier f_list[] = {{"c", print_char}, {"d", print_int}, {"i", print_int}, {"s", printS},
-                            {"%", print_percent}, {NULL, NULL}};
-
+	fmtsSpecifier f_list[] = {{"c", print_char}, {"d", print_int},
+	{"i", print_int}, {"s", printS}, {"%", print_percent}, {NULL, NULL}};
 	count = 0;
-
 	for (i = 0; format[i] != '\0'; ++i)
 	{
 		if (format[i] == '%')
@@ -37,7 +35,7 @@ int useFun(const char *format, va_list args)
 				if (format[i + 1] == f_list[j].sym[0])
 				{
 					checker = f_list[j].f(args);
-				if (checker == -1)
+					if (checker == -1)
 						return (-1);
 					count += checker;
 					break;

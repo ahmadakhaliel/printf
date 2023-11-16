@@ -10,6 +10,7 @@ int print_int(va_list args)
 	int i = 0, x;
 
 	int n = va_arg(args, int);
+	
 	if (n < 0)
 	{
 		_putchar('-');

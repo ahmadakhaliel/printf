@@ -24,19 +24,19 @@ int _printf(const char *format, ...)
             switch (*++format)
             {
             case 'd': case 'i':
-                    count += print_int(va_arg(args, int));
+                    count += print_int(args);
                     break;
                 case 'c':
-                    count += _putchar(va_arg(args, int));
+                    count += print_char(args);
                     break;
                 case 's':
-                    count += printS(va_arg(args, char*));
+                    count += printS(args);
                     break;
                 case '%':
-                    count += print_percent();
+                    count += print_percent(args);
                     break;
                 default:
-                    // Handle unknown format specifiers
+                    /* Handle unknown format specifiers */
                     _putchar('%');
                     _putchar(*format);
                     count += 2;

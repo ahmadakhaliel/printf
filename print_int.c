@@ -4,11 +4,12 @@
  * @n: int or dec to be printed
  * Return: the digit count of that int.
  */
-int print_int(int n)
+int print_int(va_list args)
 {
     char buffer[20];
     int i = 0, x;
 
+    int n = va_arg(args, int);
     if (n < 0) {
         _putchar('-');
         n *= -1;

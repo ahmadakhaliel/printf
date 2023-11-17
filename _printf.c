@@ -29,8 +29,7 @@ int useFun(const char *format, va_list args)
 	int i, j, count, checker;
 
 	fmtsSpecifier f_list[] = {{"c", print_char}, {"d", print_int},
-	{"i", print_int}, {"s", printS}, {"%", print_percent},{"b", printBinary}, {"u", print_unsigned},
-    {"o", printOctal}, {"x", printHexadecimalLowercase}, {"X",printUnsignedHexadecimalUppercase},{NULL, NULL}};
+	{"i", print_int}, {"s", printS}, {"%", print_percent}, {NULL, NULL}};
 	count = 0;
 	for (i = 0; format[i] != '\0'; ++i)
 	{

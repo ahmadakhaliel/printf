@@ -17,5 +17,10 @@ int print_percent(__attribute__((unused))va_list list);
 int print_int(va_list args);
 int useFun(const char *format, va_list args);
 int _printf(const char *format, ...);
+int printBinary(va_list args);
+int print_unsigned(va_list args);
+int printOctal(va_list args);
+int printHexadecimalLowercase(va_list args);
+int printUnsignedHexadecimalUppercase(va_list args);
 
 #endif

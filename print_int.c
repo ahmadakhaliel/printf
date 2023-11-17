@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_int - prints integer
- * @list: va_list variable
+ * @args: va_list variable
  * Return: prints given number of integers
  */
 int print_int(va_list args)

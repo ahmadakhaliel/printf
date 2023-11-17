@@ -6,13 +6,13 @@
  */
 int printS(va_list args)
 {
-	int i;
+	int a;
 	char *string;
 
-	string = va_arg(list, char *);
-
-	for (i = 0; string[i] != '\0'; i++)
-		_putchar(string[i]);
-
-	return (i);
+	string = va_arg(args, char *);
+	if (string == NULL)
+		string = "(null)";
+	for (a = 0; string[a] != '\0'; a++)
+		_putchar(string[a]);
+	return (a);
 }

@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * printS - Print a string
- * @list: arguments
+ * @args: arguments
  * Return: how many characters has been printed
  */
 int printS(va_list args)

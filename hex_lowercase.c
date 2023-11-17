@@ -17,7 +17,7 @@ int printHexadecimalLowercase(va_list args)
 
 	int highestPowerOfSixteen = 0;
 	unsigned int temp = n;
-	
+
 	while (temp > 0)
 	{
 		temp >>= 4;
@@ -28,6 +28,7 @@ int printHexadecimalLowercase(va_list args)
 	{
 		int mask = 0xF << (4 * i);
 		unsigned int digit = (n & mask) >> (4 * i);
+
 		if (digit < 10)
 		{
 			_putchar('0' + digit);
@@ -59,6 +60,7 @@ int printUnsignedHexadecimalUppercase(va_list args)
 
 	int highestPowerOfSixteen = 0;
 	unsigned int temp = n;
+
 	while (temp > 0)
 	{
 		temp >>= 4;
@@ -69,6 +71,7 @@ int printUnsignedHexadecimalUppercase(va_list args)
 	{
 		int mask = 0xF << (4 * i);
 		int digit = (n & mask) >> (4 * i);
+
 		if (digit < 10)
 		{
 			_putchar('0' + digit);
